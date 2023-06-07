@@ -18,7 +18,7 @@ function App() {
       .get("/books")
       .then((response) => {
         // send data to redux store with dispatch
-        dispatch({ type: 'SET_BOOK_LIST', payload: response.data });
+        dispatch({ type: "SET_BOOK_LIST", payload: response.data });
       })
       .catch((error) => {
         console.log("Error fetching book list:", error);
@@ -36,7 +36,7 @@ function App() {
         <h1>Books w/ Redux!</h1>
       </header>
       <main>
-        <BookForm />
+        <BookForm fetchBookList={fetchBookList} />
         <BookList />
       </main>
     </div>
